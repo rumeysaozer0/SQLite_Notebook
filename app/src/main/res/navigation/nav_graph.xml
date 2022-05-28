@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notListFragment">
+
+    <fragment
+        android:id="@+id/notListFragment"
+        android:name="com.rumeysaozer.sqlite.view.NotListFragment"
+        android:label="fragment_not_list"
+        tools:layout="@layout/fragment_not_list" >
+        <action
+            android:id="@+id/action_notListFragment_to_notAddFragment"
+            app:destination="@id/notAddFragment" />
+        <action
+            android:id="@+id/action_notListFragment_to_notUpdateFragment"
+            app:destination="@id/notUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notAddFragment"
+        android:name="com.rumeysaozer.sqlite.view.NotAddFragment"
+        android:label="fragment_not_add"
+        tools:layout="@layout/fragment_not_add" >
+        <action
+            android:id="@+id/action_notAddFragment_to_notListFragment"
+            app:destination="@id/notListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notUpdateFragment"
+        android:name="com.rumeysaozer.sqlite.view.NotUpdateFragment"
+        android:label="fragment_not_update"
+        tools:layout="@layout/fragment_not_update" >
+        <action
+            android:id="@+id/action_notUpdateFragment_to_notListFragment"
+            app:destination="@id/notListFragment" />
+        <argument
+            android:name="not"
+            app:argType="com.rumeysaozer.sqlite.model.Not" />
+    </fragment>
+</navigation>
